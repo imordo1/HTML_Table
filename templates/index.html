@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>HTML Table</title>
+</head>
+<body>
+    
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+          </tr>
+        </thead>
+
+        {% for item in users: %}
+        <tbody>  
+        <tr>
+            <td>{{item['first_name']}}</td>
+            <td>{{item['last_name']}}</td>
+            <td>{{item['first_name'] +" "+ item['last_name']}}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+</body>
+</html>
